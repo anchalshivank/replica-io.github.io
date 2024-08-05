@@ -47,6 +47,21 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      './plugins/blog-plugin',
+      {
+        blogTitle: 'Replica_IO Blog',
+        blogDescription: 'Blog of the Replica_IO project - an open-source framework for building practical distributed replication mechanisms.',
+        showReadingTime: true,
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
+        // Remove this to remove the "edit this page" links.
+        editUrl: `${siteGitHubUrl}/edit/main/`,
+      }
+    ]
+  ],
+
   presets: [
     [
       'classic',
@@ -57,15 +72,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: `${siteGitHubUrl}/edit/main/`,
         },
-        blog: {
-          blogTitle: 'Replica_IO Blog',
-          blogDescription: 'Blog of the Replica_IO project - an open-source framework for building practical distributed replication mechanisms.',
-          showReadingTime: true,
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
-          // Remove this to remove the "edit this page" links.
-          editUrl: `${siteGitHubUrl}/edit/main/`,
-        },
+        blog: false, // using custom blog plugin
         theme: {
           customCss: ['./src/css/custom.css'],
         },
